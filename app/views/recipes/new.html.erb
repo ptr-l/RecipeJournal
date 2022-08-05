@@ -1,1 +1,18 @@
-<h1>Add recipes here</h1>
+<div class="justify-center grid gap-6 mb-6 md:grid-cols-2" >
+    <%= form_with(model: @recipe, class: "", local: true) do |f| %>
+        <div>
+            <%= f.label :name, class: "text-sm mb-6" %>
+                <div>
+                    <%= f.text_field :name, class: "border rounded-lg", placeholder: 'Name of recipe' %>
+                </div>
+        </div>
+        <div>
+            <%= f.label :category, class: "text-sm mb-6" %>
+                <div>
+                    <%= f.text_field :category, class: "border rounded-lg", placeholder: 'Select/Create Category' %>
+                </div>
+        </div>
+
+        <%= f.submit %>
+        <% end %>
+</div>
