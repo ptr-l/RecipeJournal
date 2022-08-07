@@ -12,7 +12,39 @@
                     <%= f.text_field :category, class: "border rounded-lg", placeholder: 'Select/Create Category' %>
                 </div>
         </div>
-
+        <div>
+            <%= f.label :ingredients, class: "text-sm mb-6" %>
+                <div>
+                    <%= f.text_area(:ingredients, size: "50x10")%>
+                </div>
+        </div>
+        <div>
+            <%= f.label :method, class: "text-sm mb-6" %>
+                <div>
+                    <%= f.text_area(:method, size: "50x10")%>
+                </div>
+        </div>
+        <div>
+            <%= f.label "Made Recipe", class: "text-sm mb-6" %>
+            <div>
+                <%= f.check_box :made  %>
+            </div>
+        </div>
+        <div>
+           <div>
+        <div>
+            <%= f.label :review, class: "text-sm mb-6" %>
+                <div>
+                    <%= f.text_area(:review, size: "50x10")%>
+                </div>
+        </div>
+        <div>
+            <%= f.label :when, class: "text-sm mb-6" %>
+            <div>
+                <%= f.date_field(:when) %>
+            </div>
+        </div>
+        </div>
         <%= f.submit %>
         <% end %>
 </div>
