@@ -13,21 +13,27 @@
                 </div>
         </div>
         <div>
+            <%= f.label :description, class: "text-sm mb-6" %>
+                <div>
+                    <%= f.text_field :description, class: "Border rounded-lg", placeholder: 'Brief description of the recipe.' %>
+                    </div>
+        </div>
+        <div>
             <%= f.label :ingredients, class: "text-sm mb-6" %>
                 <div>
-                    <%= f.text_area(:ingredients, size: "50x10")%>
+                    <%= f.text_area(:ingredients, size: "50x10", placeholder: 'List of ingredients needed for recipe.') %>
                 </div>
         </div>
         <div>
             <%= f.label :method, class: "text-sm mb-6" %>
                 <div>
-                    <%= f.text_area(:method, size: "50x10")%>
+                    <%= f.text_area(:method, size: "50x10", placeholder: 'Step-by-Step Process of making the recipe.') %>
                 </div>
         </div>
         <div>
             <%= f.label :review, class: "text-sm mb-6" %>
                 <div>
-                    <%= f.text_area(:review, size: "50x10")%>
+                    <%= f.text_area(:review, size: "50x10", placeholder: 'Review of the Recipe') %>
                 </div>
         </div>
         <div>

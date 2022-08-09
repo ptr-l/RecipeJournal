@@ -9,8 +9,14 @@
         <div>
             <%= f.label :category, class: "text-sm mb-6" %>
                 <div>
-                    <%= f.text_field :category, class: "border rounded-lg", placeholder: 'Select/Create Category' %>
+                    <%= f.text_field :category, class: "border rounded-lg", placeholder: 'Recipe Category (i.e. Drink, Bread, Soup, etc.)' %>
                 </div>
+        </div>
+        <div>
+            <%= f.label :description, class: "text-sm mb-6" %>
+                <div>
+                    <%= f.text_field :description, class: "Border rounded-lg", placholder: 'Brief description of the recipe.' %>
+                    </div>
         </div>
         <div>
             <%= f.label :ingredients, class: "text-sm mb-6" %>
