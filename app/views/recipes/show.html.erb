@@ -20,6 +20,10 @@
     <div class="mb-6">
         <%= @recipe.comments %>
     </div>
+    <div class="mb-6">
+        <% @recipe.images.each do |im| %>
+            <%= link_to image_tag(im), im %>
+        <% end %>
     <div class="grid grid-col-3">
         <div><%= button_to "Edit Recipe", edit_recipe_path, method: :get %></div>
         <div><%= button_to "Iterate Recipe", new_recipe_path, method: :get %> </div> 

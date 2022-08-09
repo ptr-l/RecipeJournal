@@ -48,6 +48,12 @@
                 <%= f.text_area(:comments, size: "50x10", placeholder: "Any proposed changes/notes not part of the review should go here.") %>
             </div>
         </div>
+        <div>
+            <%= f.label :images, class: "text-sm mb-6" %>
+                <div>
+                    <%= f.file_field :images, multiple: true %>
+                </div>
+        </div>
         <br>
         <%= f.submit %>
         <% end %>
