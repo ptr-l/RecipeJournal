@@ -19,6 +19,12 @@
                     </div>
         </div>
         <div>
+            <%= f.label :source, class: "text-sm mb-6" %>
+                <div>
+                <%= f.text_field :source, class: "Border rounded-lg", placeholder: 'Where is this recipe from?' %>
+                </div>
+        </div>
+        <div>
             <%= f.label :ingredients, class: "text-sm mb-6" %>
                 <div>
                     <%= f.text_area(:ingredients, size: "50x10")%>
@@ -47,6 +53,12 @@
             <div>
                 <%= f.text_area(:comments, size: "50x10", placeholder: "Any proposed changes/notes not part of the review should go here.") %>
             </div>
+        </div>
+            <div>
+            <%= f.label :images, class: "text-sm mb-6" %>
+                <div>
+                    <%= f.file_field :images, multiple: true %>
+                </div>
         </div>
         <br>
         <%= f.submit %>
