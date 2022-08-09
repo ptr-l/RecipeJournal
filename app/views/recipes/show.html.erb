@@ -21,8 +21,8 @@
         <%= @recipe.comments %>
     </div>
     <div class="mb-6">
-        <% @recipe.image_thumbnails.each do |im| %>
-            <%= link_to image_tag(im), im %>
+        <% @recipe.images.each do |im| %>
+            <%= link_to image_tag(@recipe.image_thumbnail(im)), im %>
         <% end %>
     <div class="grid grid-col-3">
         <div><%= button_to "Edit Recipe", edit_recipe_path, method: :get %></div>
