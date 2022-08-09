@@ -13,8 +13,10 @@
   <body class="bg-[#EAE0D5]">
     <main class="container mx-auto mt-28 px-5 flex justify-center">
       <%= render "/partials/navbar" %>
+      <div>
       <p class="notice"><%= notice%>
       <p class="alert"><%= alert%>
+      </div>
       <%= yield %>
     </main>
   </body>
