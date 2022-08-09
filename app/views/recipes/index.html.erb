@@ -1,0 +1,5 @@
+<div class="grid grid-cols-2 gap-4">
+    <% @recipes.each do |recipe| %>
+        <%= render partial: "recipeCard", locals: {recipe: recipe} %>
+    <% end %>
+</div>
