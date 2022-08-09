@@ -25,14 +25,6 @@
                 </div>
         </div>
         <div>
-            <%= f.label "Made Recipe", class: "text-sm mb-6" %>
-            <div>
-                <%= f.check_box :made  %>
-            </div>
-        </div>
-        <div>
-           <div>
-        <div>
             <%= f.label :review, class: "text-sm mb-6" %>
                 <div>
                     <%= f.text_area(:review, size: "50x10")%>
@@ -44,7 +36,13 @@
                 <%= f.date_field(:when) %>
             </div>
         </div>
+        <div>
+            <%= f.label :comments, class: "text-sm mb-6" %>
+            <div>
+                <%= f.text_area(:comments, size: "50x10", placeholder: "Any proposed changes/notes not part of the review should go here.") %>
+            </div>
         </div>
+        <br>
         <%= f.submit %>
         <% end %>
 </div>

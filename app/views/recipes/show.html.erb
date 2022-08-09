@@ -1,1 +1,28 @@
-<h1>SHOW</h1>
+<div>
+    <div class="mb-6 text-xlg font-bold" >
+        <%= @recipe.name %>
+    </div>
+    <div class="mb-6 font-semibold" >
+        <%= @recipe.category %>
+    </div>
+    <div class="mb-6">
+        <p>Date Made: <%= @recipe.when.strftime("%D") %></p>
+    </div>
+    <div class="mb-6"> 
+        <%= @recipe.ingredients %>
+    </div>
+    <div class="mb-6">
+        <%= @recipe.method %>
+    </div>
+    <div class="mb-6"> 
+        <%= @recipe.review %>
+    </div>
+    <div class="mb-6">
+        <%= @recipe.comments %>
+    </div>
+    <div class="grid grid-col-3">
+        <div><%= button_to "Edit Recipe", edit_recipe_path, method: :get %></div>
+        <div><%= button_to "Iterate Recipe", new_recipe_path, method: :get %> </div> 
+        <div><%= button_to "Delete Recipe", recipe_path, method: :delete %> </div>
+    </div>
+</div>
