@@ -1,29 +1,55 @@
 <div>
-    <div class="mb-6 text-xlg font-bold" >
+    <div class="mb-6 text-3xl font-bold Border rounded-lg bg-neutral-100 p-4" >
         <%= @recipe.name %>
     </div>
-    <div class="mb-6 font-semibold" >
+        <div>
+    <p class ="text-sm mb-6">Description: </p>
+    </div>
+    <div class = "mb-6 font-semibold Border rounded-lg bg-neutral-100 p-4">
+        <%= @recipe.description %>
+    </div>
+    <div>
+    <p class ="text-sm mb-6">Category: </p>
+    </div>
+    <div class="mb-6 font-semibold Border rounded-lg bg-neutral-100 p-4" >
         <%= @recipe.category %>
     </div>
-    <div class="mb-6">
-        <p>Date Made: <%= @recipe.when.strftime("%D") %></p>
+    <div>
+        <p class ="text-sm mb-6"> Date Made: </p>
+    <div class="mb-6  font-semibold Border rounded-lg bg-neutral-100 p-4">
+        <p><%= @recipe.when.strftime("%D") %></p>
     </div>
-    <div class="mb-6"> 
+          <div>
+    <p class ="text-sm mb-6">Ingredients: </p>
+    </div>
+    <div class="mb-6 font-semibold Border rounded-lg bg-neutral-100 p-4"> 
         <%= @recipe.ingredients %>
     </div>
-    <div class="mb-6">
+    <div>
+    <p class ="text-sm mb-6">Method: </p>
+    </div>
+    <div class="mb-6 font-semibold Border rounded-lg bg-neutral-100 p-4">
         <%= @recipe.method %>
     </div>
-    <div class="mb-6"> 
+    <div>
+    <p class ="text-sm mb-6">Review: </p>
+    </div>
+    <div class="mb-6 font-semibold Border rounded-lg bg-neutral-100 p-4"> 
         <%= @recipe.review %>
     </div>
-    <div class="mb-6">
+    <div>
+    <p class ="text-sm mb-6">Comments: </p>
+    </div>
+    <div class="mb-6 font-semibold Border rounded-lg bg-neutral-100 p-4">
         <%= @recipe.comments %>
     </div>
+    <% if @recipe.images.size > 0 %>
     <div class="mb-6">
         <% @recipe.images.each do |im| %>
             <%= link_to image_tag(@recipe.image_thumbnail(im)), im %>
         <% end %>
+    </div>
+    <% end %>
     <div class="grid grid-col-3">
         <div><%= button_to "Edit Recipe", edit_recipe_path, method: :get %></div>
         <div><%= button_to "Iterate Recipe", new_recipe_path, method: :get %> </div> 
