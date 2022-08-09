@@ -29,7 +29,7 @@ gem "jbuilder"
 
 # Devise for Auth/User
 gem 'devise'
-#vips for image processing 
+#mini magick for image processing 
 gem "mini_magick"
 
 # Use Redis adapter to run Action Cable in production
