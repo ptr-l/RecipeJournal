@@ -1,15 +1,25 @@
 class RecipesController < ApplicationController
-    before_action :set_recipe, only: [:show, :update, :destroy]
+    before_action :set_recipe, only: [:show, :update, :destroy, :edit]
 
     def index 
         @recipes = Recipe.where("user_id = ?", current_user.id).paginate(page: params[:page], per_page: 10)
     end 
     def show 
-        @recipe = Recipe.find_by(id: params[:id])
     end 
 
     def new 
         @recipe = Recipe.new()
+    end 
+    def edit 
+    end 
+    def update 
+        if @recipe.update(recipe_params)
+            flash[:notice] = "Recipe Updated!"
+            redirect_to @recipe 
+        else 
+            flash[:alert] = "There was an error processing the update, please check your inputs and try again."
+            render 'edit'
+        end 
     end 
 
     def create

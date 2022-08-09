@@ -1,0 +1,48 @@
+<div class="justify-center grid gap-6 mb-6 md:grid-cols-2" >
+    <%= form_with(model: @recipe, class: "", local: true) do |f| %>
+        <div>
+            <%= f.label :name, class: "text-sm mb-6" %>
+                <div>
+                    <%= f.text_field :name, class: "border rounded-lg", placeholder: 'Name of recipe' %>
+                </div>
+        </div>
+        <div>
+            <%= f.label :category, class: "text-sm mb-6" %>
+                <div>
+                    <%= f.text_field :category, class: "border rounded-lg", placeholder: 'Select/Create Category' %>
+                </div>
+        </div>
+        <div>
+            <%= f.label :ingredients, class: "text-sm mb-6" %>
+                <div>
+                    <%= f.text_area(:ingredients, size: "50x10")%>
+                </div>
+        </div>
+        <div>
+            <%= f.label :method, class: "text-sm mb-6" %>
+                <div>
+                    <%= f.text_area(:method, size: "50x10")%>
+                </div>
+        </div>
+        <div>
+            <%= f.label :review, class: "text-sm mb-6" %>
+                <div>
+                    <%= f.text_area(:review, size: "50x10")%>
+                </div>
+        </div>
+        <div>
+            <%= f.label :when, class: "text-sm mb-6" %>
+            <div>
+                <%= f.date_field(:when) %>
+            </div>
+        </div>
+        <div>
+            <%= f.label :comments, class: "text-sm mb-6" %>
+            <div>
+                <%= f.text_area(:comments, size: "50x10", placeholder: "Any proposed changes/notes not part of the review should go here.") %>
+            </div>
+        </div>
+        <br>
+        <%= f.submit %>
+        <% end %>
+</div>
