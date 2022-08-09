@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
     before_action :set_recipe, only: [:show, :update, :destroy, :edit]
+    before_action :check_user, only: [:show, :update, :destroy, :edit]
 
     def index 
         @recipes = Recipe.where("user_id = ?", current_user.id).paginate(page: params[:page], per_page: 10)
@@ -48,4 +49,10 @@ class RecipesController < ApplicationController
         params.require(:recipe).permit(:name, :category, :review, :ingredients, :method, :when)
     end
 
+    def check_user 
+        unless @recipe.user_id == current_user.id 
+            flash[:alert] = "You are only authorized to interact with your own pages!"
+            redirect_to action: "index"
+        end 
+    end 
 end
